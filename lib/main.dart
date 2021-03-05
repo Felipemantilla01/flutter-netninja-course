@@ -27,16 +27,26 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My first App'),
+        title: Text(
+          'My first App',
+          style: TextStyle(fontFamily: 'Montserrat'),
+        ),
         centerTitle: true,
+        backgroundColor: Colors.red,
       ),
       body: Center(
         child: Container(
-          child: Text('Hola mundo'),
+          child: Text('Hola mundo!',
+              style: TextStyle(
+                  fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Montserrat')),
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Text('click'),
+        child: Text('click', style: TextStyle(fontFamily: 'Montserrat')),
+        onPressed: () {},
+        backgroundColor: Colors.red,
       ),
     );
   }
