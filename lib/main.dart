@@ -35,12 +35,9 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.red,
       ),
       body: Center(
-        child: Container(
-          child: Text('Hola mundo!',
-              style: TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Montserrat')),
+        child: Image(
+          //image: NetworkImage('https://i.pinimg.com/originals/bb/21/48/bb2148fec7d6b92ab7565ca15642ccd8.jpg'),
+          image: AssetImage('assets/images/background.jpg'),
         ),
       ),
       floatingActionButton: FloatingActionButton(
