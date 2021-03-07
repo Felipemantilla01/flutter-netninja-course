@@ -35,9 +35,27 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Colors.red,
       ),
       body: Center(
-        child: Image(
-          //image: NetworkImage('https://i.pinimg.com/originals/bb/21/48/bb2148fec7d6b92ab7565ca15642ccd8.jpg'),
-          image: AssetImage('assets/images/background.jpg'),
+        /*child: Icon(
+            Icons.airport_shuttle,
+          size: 50.0,
+          color: Colors.red,
+        ),*/
+        /*
+        child: RaisedButton(
+          onPressed: (){ print('You click me');},
+          child: Text('Click me! '),
+          color: Colors.red,
+        ),
+       */
+        /*
+        child: RaisedButton.icon(
+            onPressed: (){},
+            icon: Icon(Icons.alternate_email),
+            label: Text('mail')),
+         */
+        child: IconButton(
+          onPressed: () {},
+          icon: Icon(Icons.star),
         ),
       ),
       floatingActionButton: FloatingActionButton(
