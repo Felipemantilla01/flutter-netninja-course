@@ -34,19 +34,15 @@ class MyHomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red,
       ),
-      body:Padding(
-        padding: EdgeInsets.all(50.0),
-        child: Text('Hola mundo'),
+      body:Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: <Widget>[
+          Text('Hola'),
+          FlatButton(onPressed: (){}, child: Text('Click me '), color: Colors.red,),
+          Container(color:Colors.amber, padding: EdgeInsets.all(30.0), child: Text('Inside container'),)
+        ],
       ),
-      /*
-      Container(
-        color: Colors.grey,
-        child: Text('Hello'),
-        padding: EdgeInsets.all(20),
-        margin: EdgeInsets.all(50),
-      ),
-      */
-
       floatingActionButton: FloatingActionButton(
         child: Text('click', style: TextStyle(fontFamily: 'Montserrat')),
         onPressed: () {},
