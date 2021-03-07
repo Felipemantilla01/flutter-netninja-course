@@ -40,15 +40,23 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              color: Colors.cyan,
-              child: Text('One'),
-              padding: EdgeInsets.all(20.0),
+            Column(
+              children: [
+                Container(
+                  color: Colors.cyan,
+                  child: Text('One'),
+                  padding: EdgeInsets.all(20.0),
+                ),
+              ],
             ),
-            Container(
-              color: Colors.pinkAccent,
-              child: Text('Two'),
-              padding: EdgeInsets.all(12.0),
+            Row(
+              children: [
+                Container(
+                  color: Colors.pinkAccent,
+                  child: Text('Two'),
+                  padding: EdgeInsets.all(12.0),
+                ),
+              ],
             ),
             Container(
               color: Colors.amber,
