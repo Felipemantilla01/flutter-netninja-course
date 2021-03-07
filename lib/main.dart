@@ -34,37 +34,32 @@ class MyHomePage extends StatelessWidget {
         centerTitle: true,
         backgroundColor: Colors.red,
       ),
-      body:Container(
-        width: double.infinity,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Column(
-              children: [
-                Container(
-                  color: Colors.cyan,
-                  child: Text('One'),
-                  padding: EdgeInsets.all(20.0),
-                ),
-              ],
+      body:Row(
+        children: [
+          Expanded(
+            flex: 3,
+            child: Container(
+              padding: EdgeInsets.all(20),
+              child: Text('1'),
+              color: Colors.cyan,
             ),
-            Row(
-              children: [
-                Container(
-                  color: Colors.pinkAccent,
-                  child: Text('Two'),
-                  padding: EdgeInsets.all(12.0),
-                ),
-              ],
-            ),
-            Container(
+          ),
+          Expanded(
+            flex: 2,
+            child: Container(
+              padding: EdgeInsets.all(20),
+              child: Text('2'),
               color: Colors.amber,
-              child: Text('three'),
-              padding: EdgeInsets.all(30.0),
-            )
-          ],
-        ),
+            ),
+          ),
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.all(20),
+              child: Text('3'),
+              color: Colors.pinkAccent,
+            ),
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: Text('click', style: TextStyle(fontFamily: 'Montserrat')),
