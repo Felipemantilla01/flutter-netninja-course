@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Hola Mundo'),
+      home: MyHomePage(title: 'Ninja ID card'),
     );
   }
 }
@@ -26,45 +26,68 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
         title: Text(
-          'My first App',
+          this.title,
           style: TextStyle(fontFamily: 'Montserrat'),
         ),
         centerTitle: true,
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0,
       ),
-      body:Row(
-        children: [
-          Expanded(
-            flex: 3,
-            child: Container(
-              padding: EdgeInsets.all(20),
-              child: Text('1'),
-              color: Colors.cyan,
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/gg.jpeg'),
+                radius: 70,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 2,
-            child: Container(
-              padding: EdgeInsets.all(20),
-              child: Text('2'),
-              color: Colors.amber,
+            Divider(
+              height: 60.0,
+              color: Colors.grey[800],
             ),
-          ),
-          Expanded(
-            child: Container(
-              padding: EdgeInsets.all(20),
-              child: Text('3'),
-              color: Colors.pinkAccent,
-            ),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        child: Text('click', style: TextStyle(fontFamily: 'Montserrat')),
-        onPressed: () {},
-        backgroundColor: Colors.red,
+            Text('NAME',
+                style: TextStyle(color: Colors.grey, fontFamily: 'Montserrat')),
+            SizedBox(height: 10.0),
+            Text('Felipe Mantilla',
+                style: TextStyle(
+                    color: Colors.amberAccent,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 28.0)),
+            SizedBox(height: 30.0),
+            Text('CURRENT NINJA LEVEL',
+                style: TextStyle(color: Colors.grey, fontFamily: 'Montserrat')),
+            SizedBox(height: 10.0),
+            Text('8',
+                style: TextStyle(
+                    color: Colors.amberAccent,
+                    fontFamily: 'Montserrat',
+                    fontWeight: FontWeight.bold,
+                    fontSize: 28.0)),
+            SizedBox(height: 30.0),
+            Row(
+              children: [
+                Icon(Icons.email, color: Colors.grey[400]),
+                SizedBox(
+                  width: 10.0,
+                ),
+                Text(
+                  'felipe.mantilla@kbe.ai',
+                  style: TextStyle(
+                      fontSize: 18.0,
+                      letterSpacing: 1.0,
+                      color: Colors.grey[400]),
+                )
+              ],
+            )
+          ],
+        ),
       ),
     );
   }
