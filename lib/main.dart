@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'quote.dart';
-import 'quoted_card.dart';
+import 'package:flutter_net_ninja_course/pages/home.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,50 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: QuoteList(),
+      home: Home(),
     );
   }
 }
-
-class QuoteList extends StatefulWidget {
-  @override
-  _QuoteListState createState() => _QuoteListState();
-}
-
-class _QuoteListState extends State<QuoteList> {
-  List<Quote> quotes = [
-    Quote(
-        author: 'Felipe Mantilla', text: 'Be yourself; everyone is already taken'),
-    Quote(
-        author: 'Oscar Wilde',
-        text: 'I have nothing to declare except my genius'),
-    Quote(
-        author: 'Oscar Wilde',
-        text: 'The truth is rarely pure and never simple'),
-  ];
-
-  Widget quoteTemplate(Quote quote) {
-    return QuoteCard(quote: quote,delete:(){
-      setState(() {
-        quotes.remove(quote);
-      });
-    } );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.grey[200],
-      appBar: AppBar(
-        title: Text('Awesome Quotes' , style: TextStyle(fontFamily: 'Montserrat'),),
-        centerTitle: true,
-        backgroundColor: Colors.redAccent,
-      ),
-      body: Column(
-          children: quotes
-              .map((quote) => quoteTemplate(quote))
-              .toList()),
-    );
-  }
-}
-
