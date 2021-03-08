@@ -29,7 +29,7 @@ class QuoteList extends StatefulWidget {
 class _QuoteListState extends State<QuoteList> {
   List<Quote> quotes = [
     Quote(
-        author: 'Oscar Wilde', text: 'Be yourself; everyone is already taken'),
+        author: 'Felipe Mantilla', text: 'Be yourself; everyone is already taken'),
     Quote(
         author: 'Oscar Wilde',
         text: 'I have nothing to declare except my genius'),
@@ -39,7 +39,11 @@ class _QuoteListState extends State<QuoteList> {
   ];
 
   Widget quoteTemplate(Quote quote) {
-    return QuoteCard(quote: quote,);
+    return QuoteCard(quote: quote,delete:(){
+      setState(() {
+        quotes.remove(quote);
+      });
+    } );
   }
 
   @override
@@ -53,7 +57,7 @@ class _QuoteListState extends State<QuoteList> {
       ),
       body: Column(
           children: quotes
-              .map((e) => quoteTemplate(e))
+              .map((quote) => quoteTemplate(quote))
               .toList()),
     );
   }
