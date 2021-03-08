@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_net_ninja_course/pages/choose_location.dart';
 import 'package:flutter_net_ninja_course/pages/home.dart';
+import 'package:flutter_net_ninja_course/pages/loading.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +16,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Home(),
+      initialRoute: '/home',
+      routes: {
+        '/':(context)=>Loading(),
+        '/home':(context)=>Home(),
+        '/location':(context)=>ChooseLocation()
+      },
     );
   }
 }
